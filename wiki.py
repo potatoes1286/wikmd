@@ -17,6 +17,7 @@ from hashlib import sha256
 
 from config import WikmdConfig
 from git_manager import WikiRepoManager
+from macros import Macro
 from web_dependencies import get_web_deps
 
 
@@ -184,8 +185,9 @@ def file_page(file_page):
                 # html = pypandoc.convert_text(latex,"html5",format='tex', extra_args=["--mathjax"])
 
                 app.logger.info(f"Converting to HTML with pandoc >>> '{md_file_path}' ...")
-                html = pypandoc.convert_file(md_file_path, "html5",
+                html2 = pypandoc.convert_file(md_file_path, "html5",
                                              format='md', extra_args=["--mathjax"], filters=['pandoc-xnos'])
+                html = Macro(html2).process()
 
                 mod = "Last modified: %s" % time.ctime(os.path.getmtime(md_file_path))
                 folder = file_page.split("/")
