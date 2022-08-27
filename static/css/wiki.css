@@ -62,3 +62,6 @@ td {
     padding: 12px;
     border-top: 1px solid #dee2e6;
 }
+html {
+  scroll-padding-top: 4rem;
+}
