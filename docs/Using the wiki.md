@@ -5,6 +5,19 @@ nav_order: 7
 ---
 # Using the wiki
 
+## Macros
+
+We are slowly trying to integrade a Macro system. For know this only supports a table of concents.
+
+### Table of Contents (TOC)
+
+You can generate a TOC by simply add `[[TOC]]` at the place you'd like the table. It's also possible to specify
+the depth by adding a number in the macro. For example:
+
+```
+[[ TOC 3 ]]
+```
+
 ## Latex
 
 It's possible to use latex syntax inside your markdown because the markdown is first converted to latex and after that to html. This means you have a lot more flexibility.
